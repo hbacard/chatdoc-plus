@@ -69,6 +69,11 @@ Follow these steps to install and set up the app:
    ```
 
 Open your browser and navigate to [http://localhost:8501](http://localhost:8501) to interact with the app.
+   - **Note:** If the app doesn't start you can try these steps:
+      
+      - Deactivate the virtual environment with `deactivate`
+      - Reactivate it with `source .venv/bin/activate`
+      - Then run `streamlit run app.py`
 
 ## Usage
 
