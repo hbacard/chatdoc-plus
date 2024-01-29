@@ -12,7 +12,7 @@ GGUF_FILE_NAME = "neuralbeagle14-7b.Q5_K_M.gguf"
 SCRIPT_DIR = Path(__file__).resolve().parent
 MODEL_PATH = SCRIPT_DIR / "models" / GGUF_FILE_NAME
 if not MODEL_PATH.exists():
-    print("Please download the gguf file using `python3 download_neural_beagle.py`")
+    print("Please download the gguf file using `python3 download_model.py`")
 
 # LLM Initialization
 def set_llm(n_ctx: int = 4096, temperature: float = 0.0, max_tokens: int = 2048):
@@ -38,8 +38,8 @@ LLM_INSTANCE = set_llm()
 system_prompt_fr = "Tu es un assistant serviable, très qualifié et qui s'exprime en français. Exécute les instructions suivantes au mieux de tes capacités. Tu donneras des réponses exactes et concises.\n" 
 system_prompt_en = "You are a very helpful assistant. Perform the following instructions to the best of your ability.You always give your answers in English with a good writing style.\n"
 
-qa_system_prompt_fr = system_prompt_fr
-qa_system_prompt_en = system_prompt_en
+qa_system_prompt_fr = system_prompt_fr # using the same prompt for now, can be customized
+qa_system_prompt_en = system_prompt_en # same here
 
 qa_prompt_template = """{system_prompt}.\n
 ### Instruction:{query}
