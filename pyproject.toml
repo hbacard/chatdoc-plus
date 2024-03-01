@@ -1,0 +1,82 @@
+[project]
+name = "chatdoc-arxiv"
+version = "0.0.1"
+dynamic = ["dependencies"]
+requires-python = ">=3.11"
+authors = [
+    { name = "Sebastiano Ferraris, based on the work on Maxime Labonne and Maximilian Winter" },
+]
+readme = "README.md"
+license = { file = "LICENCE" }
+classifiers = ["Programming Language :: Python :: 3"]
+
+[tool.setuptools.packages.find]
+include = ["chatdoc_arxiv"]
+
+[project.urls]
+Repository = "https://github.com/SebastianoX/chatdoc-plus"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+
+[tool.ruff]
+include = ["chatdoc_arxiv/*"]
+line-length = 120
+extend-include = ["*.ipynb"]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv*",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "z_*",
+    "*.md",
+    "*.txt",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "S", "BLE", "B", "PL"]
+extend-select = ["E501"]
+ignore = [
+    "S101",
+    "PLR0913",
+    "PLR2004",
+    "PLR0912",
+    "PLR0915",
+    "PLR5501",
+    "S310",
+    "BLE001",
+    "E722",
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"*.ipynb" = ["E501", "E731", "E402", "F811"]

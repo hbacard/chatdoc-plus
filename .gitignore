@@ -1,5 +1,9 @@
-.venv
+.venv*
 .DS_Store
+.vscode
 .env
 __pycache__/
+*.egg-info
 models/*.gguf
+papers/*.pdf
+z_*
